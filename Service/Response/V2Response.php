@@ -38,7 +38,7 @@ class V2Response extends Response implements ResponseInterface
                             break;
 
                         case 'cas:attributes':
-                            foreach($child->childrenNodes as $attr) {
+                            foreach($child->childNodes as $attr) {
                                 if ($attr->nodeName != '#text') {
                                     $this->attributes[$attr->nodeName] = $attr->textContent;
                                 }

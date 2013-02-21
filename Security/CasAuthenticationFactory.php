@@ -15,7 +15,7 @@ class CasAuthenticationFactory implements SecurityFactoryInterface
         $provider = 'security.authentication.provider.cas.'.$id;
         $container
             ->register($provider, '%security.authentication.provider.cas.class%')
-            ->setArguments(array(new Reference($userProvider), new Reference('security.account_checker')))
+            ->setArguments(array(new Reference($userProvider), new Reference('security.user_checker')))
         ;
 
         $listener = new Definition(
